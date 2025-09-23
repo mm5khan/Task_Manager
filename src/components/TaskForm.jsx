@@ -17,7 +17,15 @@ export default function TaskForm({ onAdd }) {
           onChange={e => setTitle(e.target.value)}
         />
       </div>
-      
+      <div style={{marginTop:8}}>
+        <textarea
+          className="textarea"
+          rows={3}
+          placeholder="Description (optional)"
+          value={description}
+          onChange={e => setDescription(e.target.value)}
+        />
+      </div>
       <div style={{marginTop:12, display:"flex", gap:8}}>
         <button className="btn" type="submit">Create</button>
       </div>
