@@ -4,7 +4,13 @@ export default function TaskForm({ onAdd }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (!title.trim()) return; //We trim the whitespace
+    await onAdd({ title: title.trim(), description });
+    setTitle(""); 
+    setDescription(""); //Reset
+  }
 
   return (
     <form className="card" onSubmit={handleSubmit}>
