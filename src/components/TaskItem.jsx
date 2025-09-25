@@ -5,6 +5,10 @@ export default function TaskItem({ task, onUpdate, onDelete }) {
   const [title, setTitle] = useState(task.title);
   const [description, setDescription] = useState(task.description);
 
+  async function save() {
+    await onUpdate(task.id, { title, description });
+    setIsEditing(false);
+  }
 
   return (
     <div className="task">
