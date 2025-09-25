@@ -23,7 +23,21 @@ export default function TaskItem({ task, onUpdate, onDelete }) {
         )}
       </div>
 
-     
+      <div style={{ display: "flex", gap: 8, alignItems: "start" }}>
+        {isEditing ? (
+          <>
+            <button className="btn" onClick={save}>Save</button>
+            <button className="btn secondary" onClick={() => { setIsEditing(false); setTitle(task.title); setDescription(task.description); }}>
+              Cancel
+            </button>
+          </>
+        ) : (
+          <>
+            <button className="btn" onClick={() => setIsEditing(true)}>Edit</button>
+            <button className="btn danger" onClick={() => onDelete(task.id)}>Delete</button>
+          </>
+        )}
+      </div>
     </div>
   );
 }
