@@ -5,3 +5,14 @@ export async function fetchTasks() {
   if (!res.ok) throw new Error("Failed to load tasks");
   return res.json();
 }
+
+export async function createTask(payload) {
+  const res = await fetch(`${API_BASE}/tasks`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+  if (!res.ok) throw new Error((await res.json()).error || "Failed to create task");
+  return res.json();
+}
+
