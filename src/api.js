@@ -25,3 +25,9 @@ export async function updateTask(id, payload) {
   if (!res.ok) throw new Error((await res.json()).error || "Failed to update task");
   return res.json();
 }
+
+export async function deleteTask(id) {
+  const res = await fetch(`${API_BASE}/tasks/${id}`, { method: "DELETE" });
+  if (!res.ok) throw new Error((await res.json()).error || "Failed to delete task");
+  return res.json();
+}
