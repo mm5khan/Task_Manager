@@ -9,6 +9,17 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
 
+ 
+
+ 
+
+  
+
+  async function handleDelete(id) {
+    await deleteTask(id);
+    setTasks(prev => prev.filter(t => t.id !== id));
+  }
+
   return (
     <div className="container">
       <header style={{marginBottom:16}}>
