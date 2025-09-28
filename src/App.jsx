@@ -11,7 +11,10 @@ export default function App() {
 
  
 
- 
+  async function handleAdd(payload) {
+    const created = await createTask(payload);
+    setTasks(prev => [created, ...prev]);
+  }
 
   async function handleUpdate(id, payload) {
     const updated = await updateTask(id, payload);
