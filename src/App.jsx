@@ -9,7 +9,13 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
 
- 
+  useEffect(() => {
+  (async () => {
+    const data = await fetchTasks();
+    setTasks(data);
+    setLoading(false);
+  })();
+}, []);
 
   async function handleAdd(payload) {
     const created = await createTask(payload);
