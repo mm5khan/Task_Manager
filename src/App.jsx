@@ -13,7 +13,10 @@ export default function App() {
 
  
 
-  
+  async function handleUpdate(id, payload) {
+    const updated = await updateTask(id, payload);
+    setTasks(prev => prev.map(t => (t.id === id ? updated : t)));
+  }
 
   async function handleDelete(id) {
     await deleteTask(id);
