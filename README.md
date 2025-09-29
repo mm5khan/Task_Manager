@@ -14,7 +14,7 @@ A minimalist full-stack Task Manager using React (Vite) and Express. It demonstr
 **Backend**: Node.js, Express, CORS, morgan, nanoid (IDs)
 
 ## Project Structure
-`root/
+root/
 ├─ backend/
 │  ├─ server.js
 │  └─ package.json
@@ -30,10 +30,10 @@ A minimalist full-stack Task Manager using React (Vite) and Express. It demonstr
 │        ├─ TaskForm.jsx
 │        ├─ TaskItem.jsx
 │        └─ TaskList.jsx
-└─ README.md`
+└─ README.md
 
 ## Quick Start 
 1. Backend 
-`cd backend
+```cd backend
 npm install
-npm run dev   `
+npm run dev ```
