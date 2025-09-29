@@ -18,4 +18,25 @@ body {
   padding: 20px;
 }
 
+.card {
+  background: #121923;
+  border: 1px solid #213043;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .25);
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.input,.textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background: #0e1621;
+  color: #e7edf3;
+  border: 1px solid #223146;
+  border-radius: 10px;
+}
 
