@@ -40,3 +40,52 @@ body {
   border-radius: 10px;
 }
 
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #36557a;
+  background: #173554;
+  color: #d9ecff;
+  cursor: pointer;
+}
+
+.btn.secondary {
+  background: transparent;
+}
+
+.btn.danger {
+  border-color: #6a2e2e;
+  background: #351717;
+  color: #ffd9d9;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #20324a;
+  border-radius: 12px;
+  background: #0f1722;
+}
+
+.task h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+}
+
+.task p {
+  margin: 0;
+  color: #b8c7d6;
+}
+
+.meta {
+  color: #8aa3ba;
+  font-size: 12px;
+}
+
+hr.sep {
+  border: none;
+  border-top: 1px solid #223146;
+  margin: 16px 0;
+}
