@@ -41,3 +41,37 @@ cd backend
 npm install
 npm run dev 
 ```
+2. Frontend
+```
+cd client
+npm install
+npm run dev 
+```
+
+## API Reference
+### Task Object 
+```
+{
+  "id": "string",
+  "title": "string",
+  "description": "string"
+}
+```
+### Endpoints
+- `GET /api/tasks` → returns `[Task]`
+- `POST /api/tasks` → `body: { "title": "Buy milk", "description": "optional" }` → `201 Task`
+- `PUT /api/tasks/:id` → `body: { "title"?: "...", "description"?: "..." }` → `200 Task`
+- `DELETE /api/tasks/:id` → `200 Task`
+
+## Design Notes
+- State ownership: `App.jsx` holds tasks; children receive data + callbacks.
+- API layer: `api.js` isolates network calls and error handling.
+- Validation: Frontend trims titles; backend enforces types (adjust as needed).
+- In-memory store: Simple by spec; easy to swap for a DB later.
+
+## Troubleshooting 
+- Cannot PUT /api/tasks → Use `/api/tasks/:id` (include an ID) and hit the right port (3000), or configure the Vite proxy.
+- CORS error → Enable CORS on Express or use the Vite proxy setup above.
+- Loading stuck → Ensure you call `setLoading(false)` or remove the loading state entirely.
+- Invalid Date → Don’t render timestamps if you removed them from the model.
+- Port in use → `npm run dev -- --port 5174` (frontend) or change the backend port.

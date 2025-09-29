@@ -4,7 +4,7 @@ import morgan from "morgan";
 import {nanoid} from "nanoid";
 
 const app=express();
-const port=3000; // process.env.port if provided
+const port=3000 || process.env.PORT; // process.env.PORT if provided
 
 app.use(cors({orgin:"http://localhost:5173"}));
 app.use(express.json()); // Expect JSON from the frontend
