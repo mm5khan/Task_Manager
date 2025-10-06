@@ -6,7 +6,10 @@ import {nanoid} from "nanoid";
 const app=express();
 const port=process.env.PORT || 3000; // process.env.PORT if provided
 
-app.use(cors({origin:"http://localhost:5173"}));
+app.use(cors({origin:[
+    "http://localhost:5173",                  // for local dev
+    "https://task-manager-1-3qob.onrender.com/"      // add this for Render deployment
+  ]}));
 app.use(express.json()); // Expect JSON from the frontend
 app.use(morgan("dev"));
 
